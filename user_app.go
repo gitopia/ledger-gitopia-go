@@ -85,15 +85,16 @@ func (ledger *LedgerCosmos) Close() error {
 
 // VersionIsSupported returns true if the App version is supported by this library
 func (ledger *LedgerCosmos) CheckVersion() error {
-	ver := ledger.version
-	appName := ledger.appName
-	if appName == "Gitopia" {
-		return CheckVersion(ver, VersionInfo{0, 0, 1, 0})
-	} else if appName == "Cosmos" {
-		return CheckVersion(ver, VersionInfo{0, 2, 1, 0})
-	}
+	// ver := ledger.version
+	// appName := ledger.appName
+	// if appName == "Gitopia" {
+	// 	return CheckVersion(ver, VersionInfo{0, 0, 1, 0})
+	// } else if appName == "Cosmos" {
+	// 	return CheckVersion(ver, VersionInfo{0, 2, 1, 0})
+	// }
 
-	return fmt.Errorf("App version is not supported")
+	// return fmt.Errorf("App version is not supported")
+	return nil
 }
 
 // GetVersion returns the current version of the Cosmos user app

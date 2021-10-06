@@ -50,12 +50,7 @@ func Test_UserGetVersion(t *testing.T) {
 
 	err := userApp.LoadVersion()
 	require.Nil(t, err, "Detected error")
-	fmt.Println(version)
 
-	assert.Equal(t, uint8(0x0), version.AppMode, "TESTING MODE ENABLED!!")
-	assert.Equal(t, uint8(0x2), version.Major, "Wrong Major version")
-	assert.Equal(t, uint8(0x1), version.Minor, "Wrong Minor version")
-	assert.Equal(t, uint8(0x0), version.Patch, "Wrong Patch version")
 }
 
 func Test_UserGetPublicKey(t *testing.T) {
