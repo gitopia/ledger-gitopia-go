@@ -14,7 +14,7 @@
 *  limitations under the License.
 ********************************************************************************/
 
-package ledger_cosmos_go
+package ledger_gitopia_go
 
 import (
 	"crypto/sha256"
@@ -48,7 +48,7 @@ func Test_UserGetVersion(t *testing.T) {
 
 	userApp.api.Logging = true
 
-	version, err := userApp.GetVersion()
+	err := userApp.LoadVersion()
 	require.Nil(t, err, "Detected error")
 	fmt.Println(version)
 
