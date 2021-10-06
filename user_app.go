@@ -88,7 +88,7 @@ func (ledger *LedgerCosmos) CheckVersion() error {
 	ver := ledger.version
 	appName := ledger.appName
 	if appName == "Gitopia" {
-		return CheckVersion(ver, VersionInfo{0, 0, 1, 0})
+		return CheckVersion(ver, VersionInfo{0, 1, 0, 0})
 	} else if appName == "Cosmos" {
 		return CheckVersion(ver, VersionInfo{0, 2, 1, 0})
 	}
@@ -165,6 +165,7 @@ func (ledger *LedgerCosmos) GetAddressPubKeySECP256K1(bip32Path []uint32, hrp st
 func (ledger *LedgerCosmos) GetBip32bytes(bip32Path []uint32, hardenCount int) ([]byte, error) {
 	var pathBytes []byte
 	var err error
+	// check
 	if (ledger.appName == "Gitopia") {
 		pathBytes, err = GetBip32bytesv2(bip32Path, 3)
 		if err != nil {
