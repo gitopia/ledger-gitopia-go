@@ -14,7 +14,7 @@
 *  limitations under the License.
 ********************************************************************************/
 
-package ledger_cosmos_go
+package ledger_gitopia_go
 
 import (
 	"crypto/sha256"
@@ -48,14 +48,9 @@ func Test_UserGetVersion(t *testing.T) {
 
 	userApp.api.Logging = true
 
-	version, err := userApp.GetVersion()
+	err := userApp.LoadVersion()
 	require.Nil(t, err, "Detected error")
-	fmt.Println(version)
 
-	assert.Equal(t, uint8(0x0), version.AppMode, "TESTING MODE ENABLED!!")
-	assert.Equal(t, uint8(0x2), version.Major, "Wrong Major version")
-	assert.Equal(t, uint8(0x1), version.Minor, "Wrong Minor version")
-	assert.Equal(t, uint8(0x0), version.Patch, "Wrong Patch version")
 }
 
 func Test_UserGetPublicKey(t *testing.T) {

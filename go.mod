@@ -1,4 +1,4 @@
-module github.com/cosmos/ledger-cosmos-go
+module github.com/gitopia/ledger-gitopia-go
 
 go 1.12
 
